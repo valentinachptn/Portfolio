@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous les projets | Valentina Chapoton</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="projects-page"> <!-- Ajout d'une classe pour cibler cette page si besoin -->
+
+    <!-- Navigation simple -->
+    <nav class="main-nav">
+        <a href="index.html" class="back-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Retour à l'accueil
+        </a>
+    </nav>
+
+    <section id="all-projects">
+        <h1 class="font-title page-title">TOUS LES PROJETS</h1>
+
+        <!-- LE MENU DE FILTRES -->
+        <div class="filter-menu">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="branding">Branding & Identité</button>
+            <button class="filter-btn" data-filter="web">UX/UI & Web Design</button>
+        </div>
+
+        <!-- LA GRILLE DES PROJETS -->
+        <div class="projects-grid-filterable">
+            
+            <!-- Projet 1 : Branding -->
+            <article class="project-card brand-project filter-item" data-category="branding">
+                <a href="projet-janaweb.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-janaweb.png" alt="Jana Web">
+                <div class="project-number">01</div>
+                <div class="project-info">
+                    <h3>Jana Web</h3>
+                    <p>Branding & Identité</p>
+                </div>
+            </article>
+
+            <!-- Projet 2 : Web -->
+            <article class="project-card web-project filter-item" data-category="web">
+                <a href="projet-janaweb-site.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-janaweb-site.png" alt="Site Jana Web">
+                <div class="project-number">02</div>
+                <div class="project-info">
+                    <h3>Jana Web site</h3>
+                    <p>Refonte site internet</p>
+                </div>
+            </article>
+
+            <!-- Projet 3 : Web -->
+            <article class="project-card web-project filter-item" data-category="web">
+                <a href="projet-RC-tv.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-RC-tv.png" alt="Rap Contenders">
+                <div class="project-number">03</div>
+                <div class="project-info">
+                    <h3>Rap Contenders</h3>
+                    <p>Projet UX/UI fictif</p>
+                </div>
+            </article>
+
+            <!-- Projet 4 : Branding -->
+            <article class="project-card brand-project filter-item" data-category="branding">
+                <a href="projet-horea-atelier.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-horea-atelier.png" alt="Horéa Atelier">
+                <div class="project-number">04</div>
+                <div class="project-info">
+                    <h3>Horéa Atelier</h3>
+                    <p>Projet logo fictif</p>
+                </div>
+            </article>
+
+            <!-- Projet 5 : Web -->
+            <article class="project-card web-project filter-item" data-category="web">
+                <a href="projet-pifr.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-pifr.png" alt="Projet UX/UI">
+                <div class="project-number">05</div>
+                <div class="project-info">
+                    <h3>Projet UX/UI</h3>
+                    <p>WordPress custom</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- LE JAVASCRIPT DU FILTRE -->
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.filter-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Change le bouton actif
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Récupère la catégorie cliquée
+                const filterValue = button.getAttribute('data-filter');
+
+                // Filtre les projets
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'flex';
+                        // Petite animation pour que l'apparition soit plus douce
+                        setTimeout(() => { item.style.opacity = '1'; }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        setTimeout(() => { item.style.display = 'none'; }, 300); // 300ms de transition
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

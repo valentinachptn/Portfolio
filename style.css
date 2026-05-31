@@ -1,0 +1,755 @@
+/* ================= 1. TYPOGRAPHIES & VARIABLES ================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'TanPearl';
+    src: url('fonts/TAN-Pearl.woff2') format('woff2'),
+         url('fonts/TAN-Pearl.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* Ta palette de couleurs */
+    --bg-color: #faeaf3; /* Fond global */
+    --primary-blue: #214c9b; /* Couleur principale */
+    --secondary-pink: #d088b9; /* Couleur secondaire */
+    --text-dark: #1a1a1a;
+    --text-gray: #555555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.font-title {
+    font-family: 'TanPearl', serif;
+}
+
+/* ================= 2. HERO HEADER ================= */
+#hero {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; 
+}
+
+.hero-title-arch {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Prend toute la place disponible */
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.arch-text {
+    font-family: 'TanPearl', serif;
+    font-size: 130px; 
+    fill: var(--primary-blue);
+    letter-spacing: 15px; 
+}
+
+.hero-img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    max-height: 70vh;
+    z-index: 2;
+}
+
+.hero-year {
+    position: absolute;
+    top: -5%;
+    right: 15%;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--secondary-pink); 
+    z-index: 3;
+}
+
+.hero-name {
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue); 
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+/* ================= 3. SECTION ABOUT & CV ================= */
+#about {
+    padding: 5rem 0 3rem 0; 
+}
+
+.about-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 4rem; 
+    align-items: flex-start; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+}
+
+.badge-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.badge-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.1));
+}
+
+.about-content {
+    flex: 2; 
+    min-width: 300px;
+}
+
+.about-title {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.about-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.cv-column h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-pink);
+    border-bottom: 1px solid var(--secondary-pink);
+    padding-bottom: 0.5rem;
+}
+
+.cv-item {
+    margin-bottom: 1.5rem;
+}
+
+.cv-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.cv-item span, .contact-link {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    text-decoration: none;
+    display: block;
+}
+
+.cv-tools {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+}
+
+/* --- LE BANDEAU DÉFILANT DES OUTILS --- */
+
+.tools-marquee-wrapper {
+   
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    overflow: hidden; 
+    border-top: 2px solid var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding: 2rem 0; 
+    background-color: var(--bg-color); 
+}
+
+.tools-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-marquee 25s linear infinite;
+}
+
+.tools-marquee-wrapper:hover .tools-marquee-track {
+    animation-play-state: paused;
+}
+
+.tools-marquee-content {
+    display: flex;
+    gap: 3rem; 
+    padding-right: 3rem;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue); 
+    white-space: nowrap;
+}
+
+.tool-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* LA CLÉ DE L'ANIMATION */
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
+/* ================= 4. SECTION PROJETS (CARDS) ================= */
+#projects {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-main-title {
+    font-size: 5rem;
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 3rem;
+  
+}
+
+.projects-gallery {
+    display: flex;
+    gap: 1.5rem;
+    height: 500px;
+}
+
+.project-card {
+    flex: 1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: flex 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-card:hover {
+    flex: 2; 
+}
+
+.project-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 0;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+/* --- LE FAMEUX EFFET TEXT STROKE POUR LES CHIFFRES --- */
+.project-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 8rem;
+    line-height: 1;
+    z-index: 1;
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.15));
+}
+
+.project-info {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    width: 100%;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.brand-project {
+    border: 3px solid var(--secondary-pink); /* Contour rose */
+}
+.brand-project .project-number {
+    color: var(--secondary-pink);
+}
+
+.web-project {
+    background-color: var(--bg-color); 
+}
+.web-project .project-number {
+    color: var(--primary-blue); 
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.brand-project .project-info h3 { 
+    color: var(--secondary-pink); 
+}
+.web-project {
+    border: 3px solid var(--primary-blue); 
+}
+
+.web-project .project-number {
+    color: var(--primary-blue);
+}
+
+.web-project .project-info h3 { 
+    color: var(--primary-blue); 
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* ================= 5. PAGE TOUS LES PROJETS ================= */
+#all-projects {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 4rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Le menu des filtres */
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary-blue);
+    background: transparent;
+    color: var(--primary-blue);
+    border-radius: 50px; /* Boutons pillule */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* État actif ou survol du bouton */
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
+/* La grille des projets (Classique, pas en accordéon cette fois) */
+.projects-grid-filterable {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* On force la hauteur des cartes pour la grille */
+.projects-grid-filterable .project-card {
+    height: 400px; 
+    border-radius: 20px;
+}
+/* On enlève l'effet d'élargissement de l'accordéon pour cette page */
+.projects-grid-filterable .project-card:hover {
+    flex: unset; 
+}
+
+
+/* ================= 6. PAGE DÉTAIL PROJET (BENTO GRID) ================= */
+.project-header {
+    text-align: center;
+    padding: 5rem 2rem 2rem;
+}
+
+.project-header h1 {
+    font-size: 5rem;
+    color: var(--primary-blue);
+}
+
+.project-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Le CSS Grid pour recréer tes images de référence ! */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-auto-rows: 300px; /* Chaque ligne fait 300px de haut */
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+}
+
+/* Un bloc standard */
+.bento-item {
+    border-radius: 30px; /* Coins très ronds comme sur tes ref */
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Un bloc qui prend 2 colonnes de large */
+.bento-large {
+    grid-column: span 2;
+}
+
+/* Un bloc qui prend 2 lignes de haut */
+.bento-tall {
+    grid-row: span 2;
+}
+
+/* Un bloc qui prend toute la largeur */
+.bento-full {
+    grid-column: 1 / -1;
+    height: 600px; /* On le force à être plus haut pour le grand mockup */
+}
+
+/* Les utilitaires de couleur pour les fonds de tes boîtes Bento */
+.bg-pink { background-color: var(--secondary-pink); }
+.bg-blue { background-color: var(--primary-blue); color: white; }
+.bg-dark { background-color: #1a1a1a; }
+.bg-light { background-color: white; border: 2px solid #eee; }
+
+.bento-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.project-link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* On le met tout au-dessus (au-dessus de l'image et du texte) */
+    /* Pas de fond, pas de texte, c'est juste une zone cliquable transparente */
+}
+
+.projects-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.about-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap; /* Pratique pour que ça passe à la ligne sur mobile */
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 50px; /* Forme de pilule très tendance */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+    border: 2px solid var(--primary-blue);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-blue);
+    transform: translateY(-5px); /* Le bouton "monte" légèrement au survol */
+    box-shadow: 0 10px 20px rgba(33, 76, 155, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-pink);
+    border: 2px solid var(--secondary-pink);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-pink);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(208, 136, 185, 0.2);
+}
+
+
+.btn svg {
+    transition: stroke 0.3s ease;
+}
+
+.main-nav {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+    transform: translateX(-5px); /* La flèche recule au survol */
+}
+
+#all-projects {
+    padding: 2rem 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 5rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--primary-blue);
+    background: transparent;
+    color: var(--primary-blue);
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
+
+.projects-grid-filterable {
+    display: grid;
+    /* Crée autant de colonnes de 350px que possible */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+
+.projects-grid-filterable .project-card {
+    height: 450px; 
+    border-radius: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.projects-grid-filterable .project-card:hover {
+    flex: unset;
+    transform: translateY(-10px);
+}
+
+/* ================= 9. PAGE CONTACT ================= */
+
+#contact-section {
+    /* On centre la section verticalement sur l'écran */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap-reverse; /* Sur mobile, la photo passera au-dessus du texte */
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-title {
+    font-size: clamp(4rem, 8vw, 6rem); /* Un titre énorme et très design */
+    color: var(--primary-blue);
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.contact-desc {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 4rem;
+    max-width: 500px;
+}
+
+/* La zone avec le mail et le téléphone */
+.contact-links-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-label {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary-pink);
+    margin-bottom: 0.5rem;
+}
+
+.contact-link-large {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Texte assez gros pour être bien cliquable */
+    font-weight: 500;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Petit effet de soulignement au survol */
+    background-image: linear-gradient(var(--secondary-pink), var(--secondary-pink));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-bottom: 5px;
+}
+
+.contact-link-large:hover {
+    color: var(--secondary-pink);
+    background-size: 100% 2px; /* La ligne rose apparaît au survol */
+}
+
+.social-links-small {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links-small a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-links-small a:hover {
+    color: var(--primary-blue);
+}
+
+/* La photo à droite */
+.contact-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-photo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 30px; /* Coins arrondis pour la douceur */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    /* Petite rotation optionnelle pour casser la rigueur */
+    transform: rotate(3deg);
+    transition: transform 0.4s ease;
+}
+
+.contact-photo:hover {
+    transform: rotate(0deg) scale(1.02);
+}

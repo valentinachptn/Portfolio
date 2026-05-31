@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentina Chapoton | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= SECTION 1 : HERO ================= -->
+    <header id="hero">
+        <div class="hero-container">
+            
+            <div class="hero-title-arch">
+                <svg viewBox="0 0 1400 400" width="100%" height="100%">
+                    <path id="curve" d="M 50 350 Q 700 80 1350 350" fill="transparent" />
+                    <text class="arch-text">
+                        <textPath href="#curve" startOffset="50%" text-anchor="middle">
+                            PORTFOLIO
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            
+            <!-- Les petits éléments textuels -->
+            <span class="hero-year">2026</span>
+            
+            <!-- Ton illustration -->
+            <img class="hero-img" src="assets/valentina-cartoon.png" alt="Illustration Valentina">
+            
+        </div>
+    </header>
+
+    <!-- ================= SECTION 2 : ABOUT, CV & BANDEAU ================= -->
+    <section id="about">
+        <!-- Le conteneur limité en largeur pour le texte -->
+        <div class="about-container">
+            
+            <!-- La colonne de gauche (Badge) -->
+            <div class="badge-wrapper">
+                <img src="assets/valentina-badge.png" alt="Badge d'identification de Valentina" class="badge-img">
+            </div>
+            
+            <!-- La colonne de droite (Présentation & CV/Formation) -->
+            <div class="about-content">
+                <h2 class="font-title about-title">Moi, c'est Valentina</h2>
+                <p class="about-desc">
+                    Étudiante en web design et passionnée d'UX/UI. Je conçois parce que j'aime résoudre des problèmes, comprendre les besoins des utilisateurs et faire en sorte que chaque détail compte. Mon but : créer des interfaces évidentes, esthétiques et sans friction.
+                </p>
+                
+                <!-- Grille du CV -->
+                <div class="cv-grid">
+                    
+                    <!-- Colonne 1 : Expérience -->
+                    <div class="cv-column">
+                        <h3>EXPÉRIENCE</h3>
+                        <div class="cv-item">
+                            <h4>Jana Web</h4>
+                            <span>Alternance Web Design • 2025 - 2026</span>
+                        </div>
+                        <div class="cv-item">
+                            <h4>Projets fictifs</h4>
+                            <span>Logo / Branding / Web • 2023 - Présent</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Colonne 2 : Formation -->
+                    <div class="cv-column">
+                        <h3>FORMATION</h3>
+                        <div class="cv-item">
+                            <h4>Ynov Aix-en-Provence</h4>
+                            <span>Bachelor 3 Web Design • 2025 - 2026</span>
+                        </div>
+                        <div class="cv-item">
+                            <h4>Ynov Montpellier</h4>
+                            <span>Bachelor 1 & 2 • 2023 - 2025</span>
+                        </div>
+                    </div>
+                    
+                </div> 
+
+               
+                                <div class="about-actions">
+                    <!-- On change l'URL vers contact.html -->
+                    <a href="contact.html" class="btn btn-primary">Contactez-moi</a>
+                    
+                    <a href="assets/cv-valentina.pdf" target="_blank" download class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Télécharger mon CV
+                    </a>
+                </div>
+
+            </div> <!-- Fin de about-content -->
+        </div> <!-- Fin de about-container -->
+
+        <!-- Le bandeau défilant -->
+        <div class="tools-marquee-wrapper">
+            <div class="tools-marquee-track">
+                
+                <!-- GROUPE 1 -->
+                <div class="tools-marquee-content">
+                    <div class="tool-item"><img src="assets/figma-icon.svg" alt="Figma"> Figma</div>
+                    <div class="tool-item"><img src="assets/wp-icon.svg" alt="WordPress"> WordPress</div>
+                    <div class="tool-item"><img src="assets/webflow-icon.svg" alt="Webflow"> Webflow</div>
+                    <div class="tool-item"><img src="assets/html-icon.svg" alt="HTML/CSS"> CSS/HTML</div>
+                    <div class="tool-item"><img src="assets/ai-icon.svg" alt="Illustrator"> Illustrator</div>
+                    <div class="tool-item"><img src="assets/ps-icon.svg" alt="Photoshop"> Photoshop</div>
+                    <div class="tool-item"><img src="assets/in-icon.svg" alt="InDesign"> InDesign</div>
+                </div>
+                
+                <!-- GROUPE 2 -->
+                <div class="tools-marquee-content" aria-hidden="true">
+                    <div class="tool-item"><img src="assets/figma-icon.svg" alt="Figma"> Figma</div>
+                    <div class="tool-item"><img src="assets/wp-icon.svg" alt="WordPress"> WordPress</div>
+                    <div class="tool-item"><img src="assets/webflow-icon.svg" alt="Webflow"> Webflow</div>
+                    <div class="tool-item"><img src="assets/html-icon.svg" alt="HTML/CSS"> CSS/HTML</div>
+                    <div class="tool-item"><img src="assets/ai-icon.svg" alt="Illustrator"> Illustrator</div>
+                    <div class="tool-item"><img src="assets/ps-icon.svg" alt="Photoshop"> Photoshop</div>
+                    <div class="tool-item"><img src="assets/in-icon.svg" alt="InDesign"> InDesign</div>
+                </div>
+
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- ================= SECTION 3 : PROJETS ================= -->
+    <section id="projects">
+        <h2 class="projects-main-title font-title">PROJETS</h2>
+        
+        <div class="projects-gallery">
+            
+            <!-- Projet 1 : Branding -->
+            <article class="project-card brand-project">
+                <a href="projet-janaweb.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-janaweb.png" alt="Projet Jana Web">
+                <div class="project-number">01</div>
+                <div class="project-info">
+                    <h3>Jana Web</h3>
+                    <p>Branding & Identité</p>
+                </div>
+            </article>
+
+            <!-- Projet 2 : Web Design -->
+            <article class="project-card web-project">
+                <a href="projet-janaweb-site.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-janaweb-site.png" alt="Site Jana Web">
+                <div class="project-number">02</div>
+                <div class="project-info">
+                    <h3>Jana Web site</h3>
+                    <p>Refonte site internet</p>
+                </div>
+            </article>
+
+            <!-- Projet 3 : Web Design -->
+            <article class="project-card web-project">
+                <a href="projet-RC-tv.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-RC-tv.png" alt="Rap Contenders">
+                <div class="project-number">03</div>
+                <div class="project-info">
+                    <h3>Rap Contenders</h3>
+                    <p>Projet UX/UI fictif</p>
+                </div>
+            </article>
+
+            <!-- Projet 4 : Branding -->
+            <article class="project-card brand-project">
+                <a href="projet-horea-atelier.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-horea-atelier.png" alt="Horéa Atelier">
+                <div class="project-number">04</div>
+                <div class="project-info">
+                    <h3>Horéa Atelier</h3>
+                    <p>Projet logo fictif</p>
+                </div>
+            </article>
+
+            <!-- Projet 5 : Web Design -->
+            <article class="project-card web-project">
+                <a href="projet-pifr.html" class="project-link-overlay"></a>
+                <img class="project-img" src="assets/mise-en-avant-pifr.png" alt="Projet UX/UI">
+                <div class="project-number">05</div>
+                <div class="project-info">
+                    <h3>Projet UX/UI</h3>
+                    <p>WordPress custom</p>
+                </div>
+            </article>
+
+        </div> <!-- Fin de la projects-gallery -->
+
+        <!-- Le bouton pour voir tous les projets -->
+        <div class="projects-action">
+            <a href="projets.html" class="btn btn-primary">Voir tous les projets</a>
+        </div>
+
+    </section>
+
+</body>
+</html>
