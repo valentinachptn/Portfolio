@@ -243,6 +243,251 @@ body {
     }
 }
 
+/* ================= 1. TYPOGRAPHIES & VARIABLES ================= */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@font-face {
+    font-family: 'TanPearl';
+    src: url('fonts/TAN-Pearl.woff2') format('woff2'),
+         url('fonts/TAN-Pearl.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* Ta palette de couleurs */
+    --bg-color: #faeaf3; /* Fond global */
+    --primary-blue: #214c9b; /* Couleur principale */
+    --secondary-pink: #d088b9; /* Couleur secondaire */
+    --text-dark: #1a1a1a;
+    --text-gray: #555555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.font-title {
+    font-family: 'TanPearl', serif;
+}
+
+/* ================= 2. HERO HEADER ================= */
+#hero {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; 
+}
+
+.hero-title-arch {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Prend toute la place disponible */
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.arch-text {
+    font-family: 'TanPearl', serif;
+    font-size: 130px; 
+    fill: var(--primary-blue);
+    letter-spacing: 15px; 
+}
+
+.hero-img {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    max-height: 70vh;
+    z-index: 2;
+}
+
+.hero-year {
+    position: absolute;
+    top: -5%;
+    right: 15%;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--secondary-pink); 
+    z-index: 3;
+}
+
+.hero-name {
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue); 
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+/* ================= 3. SECTION ABOUT & CV ================= */
+#about {
+    padding: 5rem 0 3rem 0; 
+}
+
+.about-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 4rem; 
+    align-items: flex-start; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    margin-bottom: 5rem;
+}
+
+.badge-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.badge-img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0px 20px 30px rgba(0,0,0,0.1));
+}
+
+.about-content {
+    flex: 2; 
+    min-width: 300px;
+}
+
+.about-title {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.about-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.cv-column h3 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-pink);
+    border-bottom: 1px solid var(--secondary-pink);
+    padding-bottom: 0.5rem;
+}
+
+.cv-item {
+    margin-bottom: 1.5rem;
+}
+
+.cv-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.cv-item span, .contact-link {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    text-decoration: none;
+    display: block;
+}
+
+.cv-tools {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue);
+}
+
+/* --- LE BANDEAU DÉFILANT DES OUTILS --- */
+
+.tools-marquee-wrapper {
+   
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    overflow: hidden; 
+    border-top: 2px solid var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding: 2rem 0; 
+    background-color: var(--bg-color); 
+}
+
+.tools-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-marquee 25s linear infinite;
+}
+
+.tools-marquee-wrapper:hover .tools-marquee-track {
+    animation-play-state: paused;
+}
+
+.tools-marquee-content {
+    display: flex;
+    gap: 3rem; 
+    padding-right: 3rem;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-blue); 
+    white-space: nowrap;
+}
+
+.tool-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* LA CLÉ DE L'ANIMATION */
+@keyframes scroll-marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
+}
+
 /* ================= 4. SECTION PROJETS (CARDS) ================= */
 #projects {
     padding: 5rem 2rem;
