@@ -8,8 +8,15 @@
 </head>
 <body class="project-detail-page">
 
+    <!-- NAVIGATION -->
     <nav class="main-nav">
-        <a href="projets.html" class="back-link">← Retour aux projets</a>
+        <a href="projets.html" class="back-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Retour aux projets
+        </a>
     </nav>
 
     <!-- HEADER DU PROJET -->
@@ -23,33 +30,37 @@
         
         <!-- Bloc 1 : Image principale en haut à gauche -->
         <div class="bento-item bento-large bg-pink">
-            <img src="assets/mockup-logo-janaweb-1.jpg" alt="Mockup logo Jana Web principal">
+            <img class="bento-img" src="assets/mockup-logo-janaweb-1.jpg" alt="Mockup logo Jana Web principal">
         </div>
 
         <!-- Bloc 2 : Bloc noir à côté -->
         <div class="bento-item bento-tall bg-dark text-white">
-            <img src="assets/mockup-logo-janaweb-long.jpg" alt="Version horizontale du logo Jana Web">
+            <img class="bento-img" src="assets/mockup-logo-janaweb-long.jpg" alt="Version horizontale du logo Jana Web">
         </div>
 
         <!-- Bloc 3 : Typographie -->
         <div class="bento-item bg-blue">
-            <h3 class="font-title">Typographie</h3>
-            <p class="large-type gilroy-bold">Gilroy Bold</p>
+            <h3 class="gilroy-bold" style="font-size: 1.5rem; margin-bottom: 1rem;">Typographie</h3>
+            <p class="large-type gilroy-bold" style="font-size: 2.5rem;">Gilroy Bold</p>
         </div>
 
         <!-- Bloc 4 : Texte à droite de Typographie -->
-        <div class="bento-item bg-light project-text">
-            <p>
+        <!-- La classe project-text (que tu ajouteras au CSS) permet d'aligner le texte à gauche -->
+        <div class="bento-item bg-light project-text" style="align-items: flex-start; justify-content: center; text-align: left;">
+            <h3 class="font-title" style="margin-bottom: 1rem; color: var(--primary-blue); font-size: 2rem;">Projet</h3>
+            <p style="margin-bottom: 2rem; color: var(--text-gray); line-height: 1.6;">
                 Projet réalisé lors de mon alternance chez Jana Web, visant à refondre leur identité visuelle.
-                <a href="https://www.jana-agenceweb.com" target="_blank" rel="noopener noreferrer">
-                    jana-agenceweb.com
-                </a>
             </p>
+            
+            <!-- Le lien transformé en bouton qui réutilise la classe btn-primary du CSS de la home -->
+            <a href="https://www.jana-agenceweb.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Voir le site
+            </a>
         </div>
 
         <!-- Bloc 5 : Image du bas -->
         <div class="bento-item bento-full bg-light">
-            <img src="assets/mockup-janaweb-sweat.png" alt="Mockup textile Jana Web">
+            <img class="bento-img" src="assets/mockup-janaweb-sweat.png" alt="Mockup textile Jana Web">
         </div>
 
     </section>
