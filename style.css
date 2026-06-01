@@ -753,3 +753,22 @@ body {
 .contact-photo:hover {
     transform: rotate(0deg) scale(1.02);
 }
+
+.project-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: left;
+}
+
+.project-text a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.gilroy-bold {
+    font-family: "Gilroy", sans-serif;
+    font-weight: 700;
+}
