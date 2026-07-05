@@ -8,47 +8,58 @@
 </head>
 <body class="project-detail-page">
 
+    <!-- NAVIGATION -->
     <nav class="main-nav">
-        <a href="projets.html" class="back-link">← Retour aux projets</a>
+        <a href="projets.html" class="back-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Retour aux projets
+        </a>
     </nav>
 
     <!-- HEADER DU PROJET -->
     <header class="project-header">
         <h1 class="font-title">PIFR</h1>
-        <p class="project-subtitle">Création d'une application mobile</p>
+        <p class="project-subtitle">Application mobile</p>
     </header>
 
-    <!-- LA BENTO GRID (Comme sur tes images de référence) -->
+        <!-- BENTO GRID -->
     <section class="bento-grid">
         
-        <!-- Bloc 1 : Gros logo ou Visuel principal (Prend 2 cases de large) -->
-        <div class="bento-item bento-large bg-pink">
-            <img src="assets/jana-logo-grand.svg" alt="Logo Jana Web">
+        <!-- Bloc 1 : Image (Ajout de bento-no-padding) -->
+        <div class="bento-item bento-large bg-pink bento-no-padding">
+            <img class="bento-img" src="assets/horea-horizontal-1.png" alt="Mockup logo Jana Web principal">
         </div>
 
-        <!-- Bloc 2 : Les couleurs de la palette -->
-        <div class="bento-item bento-tall bg-dark text-white">
-            <h3>Palette</h3>
-            <div class="color-swatches">
-                <div class="swatch" style="background-color: #ff99cc;"></div>
-                <div class="swatch" style="background-color: #66ccff;"></div>
-                <div class="swatch" style="background-color: #ffcc00;"></div>
-            </div>
+        <!-- Bloc 2 : Image (Ajout de bento-no-padding) -->
+        <div class="bento-item bento-tall bg-dark text-white bento-no-padding">
+            <img class="bento-img" src="assets/horea-vertical.png" alt="Version verticale">
         </div>
 
-        <!-- Bloc 3 : Typographie ou petit texte -->
-        <div class="bento-item bg-blue">
-            <h3 class="font-title">Typographie</h3>
-            <p class="large-type">Tan Pearl</p>
-            <p>Roboto Regular</p>
+        <!-- Bloc 3 : Image (remplace Typographie) -->
+        <div class="bento-item bento-no-padding bg-blue">
+            <img 
+                src="assets/horea-packaging.png" 
+                alt="Description de l'image" 
+                class="bento-img"
+                loading="lazy"
+            >
         </div>
 
-        <!-- Bloc 4 : Mockup Ordinateur (Prend toute la largeur en bas) -->
-        <div class="bento-item bento-full bg-light">
-            <img src="assets/jana-mockup-mac.jpg" alt="Mockup Site Web">
+        <!-- Bloc 4 : Texte -->
+        <div class="bento-item bg-light project-text">
+            <!-- La classe font-title a été remplacée par gilroy-bold ! -->
+            <h3 class="gilroy-bold" style="margin-bottom: 1rem; color: var(--primary-blue); font-size: 2rem;">Projet</h3>
+            <p style="margin-bottom: 2rem; color: var(--text-gray); line-height: 1.6;">
+                Projet de création d'entreprise dans le cadre scolaire. Une application mobile permettant de créer tout type d'évènements.
+            </p>
+        </div>
+
+        <!-- Bloc 5 : Image (Ajout de bento-no-padding) -->
+        <div class="bento-item bento-full bg-light bento-no-padding">
+            <img class="bento-img" src="assets/PIFR-horizontal-2.jpg" alt="Mockup textile Jana Web">
         </div>
 
     </section>
-
-</body>
-</html>
